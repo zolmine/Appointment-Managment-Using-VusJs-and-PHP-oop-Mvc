@@ -388,12 +388,12 @@ export default {
         item.querySelector('span').style.display = "none"
       })
 
-if (this.checkSchedules !== 0){
+if (this.checkSchedules != 0){
 
   for (let i=0; i<= (this.checkSchedules.length - 1); i++){
     var test = document.querySelectorAll('.tesla');
     test.forEach(item => {
-      if (parseInt(item.id) === parseInt(this.checkSchedules[i])){
+      if (parseInt(item.id) == parseInt(this.checkSchedules[i])){
         // console.log()
         item.querySelector('svg').style.display = "none"
         item.querySelector('span').style.display = "block"
