@@ -1,10 +1,7 @@
 <?php
 
-include "../../actions/autoload_act.php";
+include "../../actions/includes.php";
 
-//headers
-header('Access-Control-Allow-Origin: *');
-header('Content-Type: application/json');
 
 $date = $_GET['date'];
 

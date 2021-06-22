@@ -11,9 +11,9 @@ class Appointment extends Database
     }
 
     //displaying all appointment that has reserved by a specific user "selecting by token"
-    public function Display_fo_user($token): array
+    public function Appointment_fo_user($token): array
     {
-        $sql = 'select * from appointment where app_user_token = ?';
+        $sql = 'select * from appointment where app_user_token = ? order by app_date';
         $stmt = $this->getConnect()->prepare($sql);
         $stmt->execute([$token]);
         return $stmt->fetchAll();
@@ -29,7 +29,7 @@ class Appointment extends Database
     }
 
     //check if a schedule is already taken with schedule id and the date
-    public function Check_appointment_schedule($date)
+    public function Check_appointment_schedule($date): array
     {
         $sql = 'select app_schedule_id from appointment where  appointment.app_date = ?';
         $stmt = $this->getConnect()->prepare($sql);
@@ -37,6 +37,14 @@ class Appointment extends Database
         return $stmt->fetchAll();
     }
 
+    //delete an appointment from appointment table by the id of the appointment
+    public function Delete_appointment($id)
+    {
+        $sql = 'delete  from appointment where  app_id = ?';
+        $stmt = $this->getConnect()->prepare($sql);
+        $stmt->execute([$id]);
+
+    }
 
 }
 

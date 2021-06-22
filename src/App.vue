@@ -1,21 +1,15 @@
 <template>
-
-    <router-link to="/">Home</router-link>
-  
+  <navbar />
   <router-view/>
 </template>
 <script>
-import reserve from "@/components/reserve.vue";
-// import Datepicker from "@/components/Datepicker";
 
 
-
+import  navbar from "@//components/nav.vue"
 export default {
-  components: {
-    // Datepicker,
-    reserve
-
-  }
+components: {
+  navbar
+}
 }
 
 </script>

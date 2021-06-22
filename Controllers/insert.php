@@ -1,12 +1,11 @@
 <?php
-include "../actions/autoload_act.php";
+include "../actions/includes.php";
 
-//headers
-header('Access-Control-Allow-Origin: *');
-header('Content-Type: application/json');
+
 
 $id = $_GET['id'];
 $date = $_GET['date'];
+$token = $_GET['token'];
 
 $schedule = new Schedule;
 $rows = $schedule->Display_specific_schedule($id);
@@ -17,7 +16,7 @@ foreach ($rows as $row) {
         ':date'         => $date,
         ':start'        => $row['sche_start_time'],
         ':end'          => $row['sche_end_time'],
-        ':token'        => 'null',
+        ':token'        => $token,
         ':schedule_id'  => $row['sche_id']
 
 );

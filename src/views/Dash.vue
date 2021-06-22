@@ -1,18 +1,18 @@
 <template>
 
-<hero/>
+  <dash/>
   <footers/>
 </template>
 
 <script>
 import navbar from "@/components/nav";
-import hero from "@/components/hero";
+import dash from "@/components/dash";
 import footers from "@/components/footer";
 export default {
   name: "Home",
   components:{
     navbar,
-    hero,
+    dash,
     footers
   }
 }

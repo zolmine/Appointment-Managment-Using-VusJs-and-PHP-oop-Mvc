@@ -23,4 +23,9 @@ class Database
 
         return $this->connect;
     }
+
+    public function num_rows($array): int|string
+    {
+        return mysqli_stmt_num_rows($array);
+    }
 }

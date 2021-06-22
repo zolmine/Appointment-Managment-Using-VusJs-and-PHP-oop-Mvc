@@ -1,23 +1,26 @@
 <template>
 
-<hero/>
+
+
+  <schedules/>
   <footers/>
+
+
 </template>
 
 <script>
+
 import navbar from "@/components/nav";
-import hero from "@/components/hero";
+import schedules from "@/components/schedule";
 import footers from "@/components/footer";
+
 export default {
-  name: "Home",
-  components:{
-    navbar,
-    hero,
+  name: 'Schedule',
+  components: {
+    navbar ,
+    schedules ,
     footers
+
   }
 }
 </script>
-
-<style scoped>
-
-</style>

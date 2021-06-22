@@ -1,12 +1,11 @@
 <?php
-include "../actions/functions.php";
-include "../actions/autoload_act.php";
+include "../actions/includes.php";
 
-$full_name = $_POST['full_name'];
-$cin       = $_POST['cin'];
-$age       = $_POST['age'];
-$gender    = $_POST['gender'];
-$profession = $_POST['profession'];
+
+$full_name = $_GET['fullname'];
+$cin       = $_GET['cin'];
+$age       = $_GET['age'];
+$profession = $_GET['profession'];
 
 $token = token_generator($cin,$full_name);
 
@@ -17,7 +16,8 @@ $data = array(
     ':cin'          => $cin,
     ':age'          => $age,
     ':profession'   => $profession,
-    ':gender'       => $gender,
     ':token'        => $token
 );
 $insert = $reg->Register($data);
+
+echo json_encode($token);
