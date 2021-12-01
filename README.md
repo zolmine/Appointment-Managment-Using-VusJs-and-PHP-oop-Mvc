@@ -1,4 +1,4 @@
-# brief666
+# Appointment Managment Using VusJs and PHP oop Mvc
 
 ## Project setup
 ```
